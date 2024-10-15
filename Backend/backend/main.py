@@ -13,7 +13,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000" , 
-                 "https://to-do-app-psi-two.vercel.app/"],  # React frontend URL
+                 "https://to-do-app-one-bice.vercel.app/"],  # React frontend URL
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods
     allow_headers=["*"],  # Allow all headers

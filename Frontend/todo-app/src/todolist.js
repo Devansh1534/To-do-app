@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import './styles.css'; 
+import "./styles.css";
 
-const api_url = "https://to-do-backend-r5m831og1-bhavneet-singhs-projects.vercel.app/?vercelToolbarCode=UJncWfzAzfig2JW";
+const api_url =
+  "https://to-do-backend-sable.vercel.app/?vercelToolbarCode=VsNU00EiOevfeAG";
 
 const TodoList = () => {
   const [tasks, setTasks] = useState([]);
@@ -81,18 +82,22 @@ const TodoList = () => {
     }
   };
 
-  const filteredTasks = tasks.filter(task =>
+  const filteredTasks = tasks.filter((task) =>
     task.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-custom">
       <div className="max-w-xl w-full bg-gray-100 rounded-lg shadow-lg p-6">
-        <h1 className="text-3xl font-bold text-center text-gray-700 mb-6">Todo List</h1>
+        <h1 className="text-3xl font-bold text-center text-gray-700 mb-6">
+          Todo List
+        </h1>
 
         {loading && <p className="text-center text-gray-500">Loading...</p>}
         {error && <p className="text-red-500 text-center">{error}</p>}
-        {successMessage && <p className="text-green-500 text-center">{successMessage}</p>}
+        {successMessage && (
+          <p className="text-green-500 text-center">{successMessage}</p>
+        )}
 
         <input
           type="text"
@@ -129,8 +134,13 @@ const TodoList = () => {
 
         <ul className="space-y-4">
           {filteredTasks.map((task) => (
-            <li key={task.id} className="p-4 bg-gray-300 rounded-md shadow hover:shadow-lg transition">
-              <h3 className="text-lg font-semibold text-gray-800">{task.title}</h3>
+            <li
+              key={task.id}
+              className="p-4 bg-gray-300 rounded-md shadow hover:shadow-lg transition"
+            >
+              <h3 className="text-lg font-semibold text-gray-800">
+                {task.title}
+              </h3>
               <p className="text-gray-600">{task.description}</p>
               <p className="text-gray-500">Status: {task.status}</p>
               <div className="flex space-x-2 mt-2">
